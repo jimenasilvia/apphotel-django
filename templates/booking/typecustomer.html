@@ -1,0 +1,9 @@
+{% extends '../base.html' %}
+
+    {% block content %}
+        <h1>Booking now</h1>
+        <form method="POST" class="roomtype-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Aceptar</button>
+        </form>
+    {% endblock %}

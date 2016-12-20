@@ -1,0 +1,43 @@
+.body{	margin-top: 10em;}
+.dropdown-menu
+{
+  display: block;
+}
+h1
+{
+	  color: #A98307;
+    font-family: 'Lobster';
+}
+
+h3
+{
+	 font-family: 'Lobster';
+}
+.page-header a
+{
+	color:#8A6642;
+}
+nav#menu{
+    background-image: none;
+    background-color:rgba(138, 109, 59, 0.9);
+    color: white;
+}
+nav#menu a
+{
+  color: white;
+}
+nav#menu img
+{
+  width: 100%;
+  height: 100px;
+}
+#navbar ul li
+{
+  display: block;
+  
+}
+span.glyphicon.glyphicon-pencil.editicon
+{
+    float: right;
+}
+

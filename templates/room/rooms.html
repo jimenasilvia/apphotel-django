@@ -1,0 +1,37 @@
+{% extends '../base.html' %}
+
+ {% block content %}
+  <h1>Rooms</h1>
+  <div class="header">
+      <ul class="nav nav-tabs">
+         <li role="presentation" class="active"><a href="{% url 'rooms' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+         <li role="presentation"><a href="{% url 'room_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+      </ul>
+                 
+  </div>
+  <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+            <th rowspan="2" class="text-center">Nro.</th>
+            <th rowspan="2" class="text-center">Room</th>
+            <th rowspan="2" class="text-center">Room Type</th>
+            <th rowspan="2" class="text-center">Is reserved?</th>
+             <th rowspan="2" class="text-center">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+          {% for obj in objs %}
+            <tr>
+                <td class="text-center">{{obj.id}}</td>
+                <td class="text-center">{{ obj.nro_room }}</td>
+                <td class="text-center">{{ obj.name_type }}</td>
+                <td class="text-center">{{ obj.is_reserved }}</td>
+                <td class="text-center"><a class="btn btn-default" href="{% url 'room_edit' obj.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            </tr>      
+          {% endfor %}
+      </tbody>
+  </table>
+  
+
+ {% endblock content %}

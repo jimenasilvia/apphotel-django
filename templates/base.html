@@ -1,0 +1,64 @@
+ {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="{% static 'css/hotel.css' %}">
+</head>
+
+<body>
+     <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="menu">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo-over" id="logo" href="/hotel/"><img src="/static/images/logo.png" alt=""></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href=""><i class="fa fa-home"></i></a></li>
+            <li><a href="{% url 'room_type' %} " title="Sales">Room Type</a></li>
+            <li><a href="{% url 'pay_type' %} " title="Guests">Pay Type</a></li>
+            <li class="dropdown">
+           
+              <a href="{% url 'rooms' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Rooms<i class="fa fa-gears"></i> <span class="caret"></span></a>
+            
+              <ul class="">
+                <li><a href="{% url 'ratings' %}" title="Sales Origin">Rating</a></li>
+                <li><a href="{% url 'rr' %}" title="Sales Origin">Room-Rating</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'customers'%}" title="Clientes">Customer</a></li>
+            <li><a href="{% url 'bookings'%}" title="Clientes">Bookings</a></li>
+            <li><a href="{% url 'bills'%}" title="Clientes">Bill</a></li>
+            <li><a href="{% url 'bills_payment' %}" title="Clientes">Bill Payment</a></li>
+            <li><a href="{% url 'type_customer' %}" title="Clientes">Booking Now</a></li>
+            <li class="">
+              <a title="Salir" href=""><i class="fa fa-power-off text-danger"></i></a>
+            </li>
+            <li class="user user-menu">
+              <a href=""></a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="body">
+    <dir class=" content container">
+    {% block content %}
+
+    {% endblock %}
+    </dir>
+     </div>
+
+</body>
+
+</html>

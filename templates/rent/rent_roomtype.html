@@ -1,0 +1,33 @@
+ {% extends '../base.html' %}
+ {% block content %}
+
+ <h1>Room Types</h1>
+ 
+ <div class="header">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ><a href="{% url 'room_type' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+                <li role="presentation"  class="active"><a href="" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span> Rents</a></li>
+                <li role="presentation"><a href="{% url 'rent_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>
+                Rent</a></li>
+            </ul>
+                 
+  </div>
+    <h3>Room Type - Rents</h3>
+
+    {% for obj in objs %}
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+           <h3 class="panel-title"><a href="{% url 'rent_edit' pk=obj.pk %}">{{ obj.name_type }} <span class="glyphicon glyphicon-pencil editicon"></span></a></h3>
+            
+        </div>
+        <div class="panel-body"> 
+            <p> <strong>Amount:</strong> {{ obj.amount }}</p>
+            <p> <strong>From Date:</strong> {{ obj.from_date }}</p>
+            <p> <strong>To Date:</strong> {{ obj.to_date}}</p>
+            <p> <strong>Is Active?</strong> {{ obj.is_active}}</p>
+        </div>
+    </div>
+
+    {% endfor %}
+            
+ {% endblock %}

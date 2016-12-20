@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+    {% block content %}
+    {% load bootstrap %}
+        <h1>Customers </h1>
+        <div class="header">
+      		<ul class="nav nav-tabs">
+         		<li role="presentation" ><a href="{% url 'customers' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+         		<li role="presentation" class="active"><a href="{% url 'customer_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+      		</ul>
+                 
+    	</div>
+        <h3>Customer New</h3>
+        <form method="POST" class="roomtype-form">{% csrf_token %}
+            {{ form|bootstrap }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    {% endblock %}

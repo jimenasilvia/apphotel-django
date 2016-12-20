@@ -1,0 +1,27 @@
+{% extends '../base.html' %}
+
+    {% block content %}
+        <h1>Bills</h1>
+        <div class="header">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ><a href="{% url 'bills' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+                <li role="presentation"><a href="{% url 'bill_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+                <li><a class="" href="{% url 'bill_edit' pk=obj.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                <li role="presentation" class="active"><a class="" href=""><span class="glyphicon glyphicon-eye-open"></span></a></li>
+            </ul>
+          
+        </div>
+        <h3>Bill Detail </h3>
+         <div class="panel panel-warning">
+            <div class="panel-heading"><h3 class="panel-title">Bill#{{obj.id}}</h3></div>
+            <div class="panel-body">
+               <p><strong>Booking:</strong> {{obj.booking}}</p>
+               <p><strong>Rent:</strong> {{obj.rent}}</p>
+               <p><strong>Total:</strong> {{obj.total }}</p>
+
+
+            </div>
+            
+        </div>
+        
+    {% endblock %}

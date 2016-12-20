@@ -1,0 +1,26 @@
+{% extends '../base.html' %}
+
+    {% block content %}
+        <h1>Bookings</h1>
+        <div class="header">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ><a href="{% url 'bookings' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+                <li role="presentation"><a href="{% url 'booking_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+                <li><a class="" href="{% url 'booking_edit' pk=obj.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                <li role="presentation" class="active"><a class="" href=""><span class="glyphicon glyphicon-eye-open"></span></a></li>
+            </ul>
+          
+        </div>
+        <h3>Booking Detail </h3>
+         <div class="panel panel-warning">
+            <div class="panel-heading"><h3 class="panel-title">{{obj.customer }}</h3></div>
+            <div class="panel-body">
+                <p><strong>Reservation Date:</strong> {{obj.reservation_date }}</p>
+                <p><strong>In Date:</strong> {{obj.in_date}}</p>
+                <p><strong>Out Date: </strong>{{obj.out_date}}</p>
+                <p><strong>Admin: </strong>{{obj.admin}}</p>
+            </div>
+            
+        </div>
+        
+    {% endblock %}

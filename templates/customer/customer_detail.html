@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+    {% block content %}
+        <h1>Customers</h1>
+        <div class="header">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ><a href="{% url 'customers' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+                <li role="presentation"><a href="{% url 'customer_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+                <li><a class="" href="{% url 'customer_edit' pk=obj.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                <li role="presentation" class="active"><a class="" href=""><span class="glyphicon glyphicon-eye-open"></span></a></li>
+            </ul>
+          
+        </div>
+        <h3>Customer Detail </h3>
+        <div class="panel panel-warning">
+
+            <div class="panel-heading"><h3 class="panel-title">{{obj.name }} {{obj.firstname }} {{obj.lastname }}</h3></div>
+            <div class="panel-body">
+            <p><strong>Document Type: </strong>{{obj.get_document_type_display}}</p>
+            <p><strong>Document Number: </strong>{{obj.document_number }}</p>
+            <p><strong>Email: </strong>{{obj.email}}</p>
+            <p><strong>Telephone: </strong>{{obj.telephone}}</p>
+            <p><strong>Foto: </strong>{{obj.foto}}</p>
+            </div>
+        </div>
+            
+       
+    {% endblock %}

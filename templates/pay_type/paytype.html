@@ -1,0 +1,33 @@
+{% extends '../base.html' %}
+{% block content %}
+<h1>Pay Types</h1>
+  <div class="header">
+      <ul class="nav nav-tabs">
+         <li role="presentation" class="active"><a href="{% url 'pay_type' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+         <li role="presentation"><a href="{% url 'pay_type_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+      </ul>
+                 
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th rowspan="2" class="text-center">Nro.</th>
+            <th rowspan="2" class="text-center">Pay Type</th>
+            <th rowspan="2" class="text-center">Edit</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+  
+    {% for obj in objs %}
+        <tr>
+            <td class="text-center">{{obj.id}}</td>
+            <td class="text-center">{{ obj.pay_type }}</td>
+            <td class="text-center"><a class="btn btn-default" href="{% url 'pay_type_edit' obj.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        </tr>      
+    {% endfor %}
+    </tbody>
+  </table>
+  
+{% endblock content %}

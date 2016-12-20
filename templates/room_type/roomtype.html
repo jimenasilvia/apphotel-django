@@ -1,0 +1,20 @@
+ {% extends '../base.html' %}
+
+ {% block content %}
+
+ <h1>Room Types</h1>
+ <div class="header">
+      <ul class="nav nav-tabs">
+         <li role="presentation" class="active"><a href="{% url 'room_type' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>   </li>
+         <li role="presentation"><a href="{% url 'room_type_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+      </ul>
+                 
+ </div>
+ <div  class="list-group">
+ 	{% for obj in objs %}
+ 		<a class="list-group-item list-group-item-warning" href="{% url 'room_type_detail' obj.pk %}">{{ obj.name_type }}</a>
+ 	{% endfor %}
+ </div>
+
+{% endblock content %}
+
